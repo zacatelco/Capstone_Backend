@@ -1,0 +1,4 @@
+node_modules
+MONGOBD_URI
+.env
+ 
