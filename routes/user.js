@@ -24,6 +24,7 @@ userRouter.get("/", async (req, res) => {
     }
 });
 
+
 // GET a specific user
 userRouter.get("/:id", async (req, res) => {
     try {
@@ -74,4 +75,15 @@ userRouter.delete("/:id", async (req, res) => {
     }
 });
 
+
+
+userRouter.get('/:id/friends', async (req, res) => {
+    try {
+      // This is a basic implementation - adjust as needed
+      const friends = await User.find().limit(4); // Gets first 4 users as "friends"
+      res.json(friends);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
 export default userRouter;

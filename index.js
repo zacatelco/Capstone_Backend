@@ -11,6 +11,7 @@ import mongoose from "mongoose";
 import friendRouter from "./routes/friendslist.js";
 import postRouter from "./routes/posts.js";
 import userRouter from "./routes/user.js";
+import lastfmRouter from "./routes/lastfm.js";
 
 dotenv.config();
 
@@ -47,6 +48,7 @@ app.get("/", (req, res) => {
 app.use("/api/friends", friendRouter);
 app.use("/api/posts", postRouter);
 app.use("/api/users", userRouter);
+app.use("/api/lastfm", lastfmRouter)
 
 // Global error handling
 app.use((err, req, res, next) => {
